@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:id="@+id/fragment"
+        android:name="com.zdh.alphathink.imh.TitleFragment"/>
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        layout="@layout/bottombar"
+        android:id="@+id/my_bottombar"/>
+    <FrameLayout
+
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/my_bottombar"
+        android:layout_below="@+id/fragment"
+        android:background="@color/black_overlay"></FrameLayout>
+
+
+</RelativeLayout>

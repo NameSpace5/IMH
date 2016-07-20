@@ -9,19 +9,4 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.zdh.alphathink.imh.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        android:id="@+id/textView" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Button"
-        android:id="@+id/button"
-        android:onClick="click"
-        android:layout_centerVertical="true"
-        android:layout_toRightOf="@+id/textView"
-        android:layout_toEndOf="@+id/textView" />
 </RelativeLayout>

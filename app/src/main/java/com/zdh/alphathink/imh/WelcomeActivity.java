@@ -6,13 +6,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
 import android.widget.ImageView;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class WelcomeActivity extends AppCompatActivity {
+public class WelcomeActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener {
     private ViewPager mViewPager;
 
     private  int[] mImgIds = new int[]{R.drawable.guide_image1,
@@ -23,8 +21,9 @@ public class WelcomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
-        getSupportActionBar().hide();
 
+
+        //录入引导页主题
         mViewPager = (ViewPager) findViewById(R.id.viewpager);
         mViewPager.setAdapter(new PagerAdapter() {
             @Override
@@ -52,6 +51,22 @@ public class WelcomeActivity extends AppCompatActivity {
                 return view == object;
             }
         });
+
+    }
+
+    @Override
+    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+        
+    }
+
+    @Override
+    public void onPageSelected(int position) {
+
+    }
+
+    @Override
+    public void onPageScrollStateChanged(int state) {
+
     }
     //创建适配器
 
