@@ -1,10 +1,14 @@
 package com.zdh.alphathink.imh;
+import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothDevice;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 public class Index extends FragmentActivity implements View.OnClickListener {
 
@@ -73,5 +77,15 @@ public class Index extends FragmentActivity implements View.OnClickListener {
                 break;
         }
         transaction.commit();
+    }
+    public void click(View v) {
+//        无提示打开蓝牙
+        BluetoothAdapter.getDefaultAdapter().enable();
+//有提示打开蓝牙
+//        Intent intent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+//        startActivity(intent);
+    }
+    public void click1(View v) {
+        BluetoothAdapter.getDefaultAdapter().disable();
     }
 }

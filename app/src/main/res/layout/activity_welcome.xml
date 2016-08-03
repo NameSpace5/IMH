@@ -25,21 +25,37 @@
             android:layout_gravity="center_vertical"
             android:clickable="true"
             android:padding="15.0dip"
-            android:src="@drawable/dot" />
+            android:src="@drawable/point" />
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:clickable="true"
             android:padding="15.0dip"
-            android:src="@drawable/dot" />
+            android:src="@drawable/point" />
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:clickable="true"
             android:padding="15.0dip"
-            android:src="@drawable/dot" />
+            android:src="@drawable/point" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_go"
+        android:layout_above="@id/ll"
+        android:layout_centerHorizontal="true"
+        >
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button"
+            android:text="进入应用"
+            android:visibility="gone"
+            />
+
     </LinearLayout>
 
 </RelativeLayout>

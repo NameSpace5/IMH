@@ -33,11 +33,6 @@ public class MainActivity extends AppCompatActivity {
             finish();
         }
     }
-
-    public void click(View v) {
-        Intent intent = new Intent(MainActivity.this, WelcomeActivity.class);
-        startActivity(intent);
-    }
     //判断是否初次加载，读取SharedPreference中guide_activity字段
 
 }

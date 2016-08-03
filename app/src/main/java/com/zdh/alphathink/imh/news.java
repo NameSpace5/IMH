@@ -16,4 +16,5 @@ public class News extends Fragment {
     {
         return inflater.inflate(R.layout.fragment_news, container, false);
     }
+
 }
