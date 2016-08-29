@@ -4,9 +4,9 @@
     <string name="title_activity_welcome">WelcomeActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
-    <string name="title_name">我是title名字</string>
+    <string name="title_name">IMH小助手</string>
     <string name="bottom_bar_news">信息</string>
     <string name="bottom_bar_bluetooth">蓝牙</string>
     <string name="bottom_bar_chatting">咨询</string>
-    <string name="bottom_bar_more">更多</string>
+    <string name="bottom_bar_more">个人中心</string>
 </resources>

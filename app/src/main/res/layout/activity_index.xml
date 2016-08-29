@@ -15,13 +15,11 @@
         layout="@layout/bottombar"
         android:id="@+id/my_bottombar"/>
     <FrameLayout
-
         android:id="@+id/content"
+        android:paddingTop="15px"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/my_bottombar"
         android:layout_below="@+id/fragment"
-        android:background="@color/black_overlay"></FrameLayout>
-
-
+        android:background="@color/background"/>
 </RelativeLayout>

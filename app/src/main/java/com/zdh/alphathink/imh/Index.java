@@ -1,14 +1,14 @@
 package com.zdh.alphathink.imh;
 import android.bluetooth.BluetoothAdapter;
-import android.bluetooth.BluetoothDevice;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.widget.Switch;
+
+import com.zdh.alphathink.imh.fragment.BlueToothFragment;
 
 public class Index extends FragmentActivity implements View.OnClickListener {
 
@@ -17,9 +17,10 @@ public class Index extends FragmentActivity implements View.OnClickListener {
     private LinearLayout mChatting;
     private LinearLayout mMore;
     private News news;
-    private BlueTooh bluetooh;
+    private BlueToothFragment bluetooh;
     private Chatting chatting;
     private More more;
+    private Switch mSwitch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +35,15 @@ public class Index extends FragmentActivity implements View.OnClickListener {
         mBlueTooth.setOnClickListener(this);
         mChatting.setOnClickListener(this);
         mMore.setOnClickListener(this);
+
+//        mSwitch = (Switch) findViewById(R.id.mswitch);
+//        mSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+//
+//            @Override
+//            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+//
+//            }
+//        });
         //设置默认的FragMent
         setDefaultFragment();
     }
@@ -59,7 +69,7 @@ public class Index extends FragmentActivity implements View.OnClickListener {
                 break;
             case R.id.mBlueTooth:
                 if (bluetooh == null){
-                    bluetooh = new BlueTooh();
+                    bluetooh = new BlueToothFragment();
                 }
                 transaction.replace(R.id.content,bluetooh);
                 break;
@@ -88,4 +98,5 @@ public class Index extends FragmentActivity implements View.OnClickListener {
     public void click1(View v) {
         BluetoothAdapter.getDefaultAdapter().disable();
     }
+
 }
