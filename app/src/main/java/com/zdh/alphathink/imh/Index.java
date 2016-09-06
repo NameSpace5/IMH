@@ -1,5 +1,4 @@
 package com.zdh.alphathink.imh;
-import android.bluetooth.BluetoothAdapter;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -7,8 +6,10 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Switch;
-
 import com.zdh.alphathink.imh.fragment.BlueToothFragment;
+import com.zdh.alphathink.imh.fragment.ChattingFragment;
+import com.zdh.alphathink.imh.fragment.MoreFragment;
+import com.zdh.alphathink.imh.fragment.NewsFragment;
 
 public class Index extends FragmentActivity implements View.OnClickListener {
 
@@ -16,10 +17,10 @@ public class Index extends FragmentActivity implements View.OnClickListener {
     private LinearLayout mBlueTooth;
     private LinearLayout mChatting;
     private LinearLayout mMore;
-    private News news;
+    private NewsFragment news;
     private BlueToothFragment bluetooh;
-    private Chatting chatting;
-    private More more;
+    private ChattingFragment chatting;
+    private MoreFragment more;
     private Switch mSwitch;
 
     @Override
@@ -35,15 +36,6 @@ public class Index extends FragmentActivity implements View.OnClickListener {
         mBlueTooth.setOnClickListener(this);
         mChatting.setOnClickListener(this);
         mMore.setOnClickListener(this);
-
-//        mSwitch = (Switch) findViewById(R.id.mswitch);
-//        mSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-//
-//            @Override
-//            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-//
-//            }
-//        });
         //设置默认的FragMent
         setDefaultFragment();
     }
@@ -51,7 +43,7 @@ public class Index extends FragmentActivity implements View.OnClickListener {
     private void setDefaultFragment() {
         android.support.v4.app.FragmentManager fm = getSupportFragmentManager();
         android.support.v4.app.FragmentTransaction transaction = fm.beginTransaction();
-        news = new News();
+        news = new NewsFragment();
         transaction.replace(R.id.content,news);
         transaction.commit();
     }
@@ -63,7 +55,7 @@ public class Index extends FragmentActivity implements View.OnClickListener {
         switch(v.getId()){
             case R.id.mNews:
                 if (news == null){
-                    news = new News();
+                    news = new NewsFragment();
                 }
                 transaction.replace(R.id.content,news);
                 break;
@@ -75,28 +67,17 @@ public class Index extends FragmentActivity implements View.OnClickListener {
                 break;
             case R.id.mChatting:
                 if (chatting == null){
-                    chatting = new Chatting();
+                    chatting = new ChattingFragment();
                 }
                 transaction.replace(R.id.content,chatting);
                 break;
             case R.id.mMore:
                 if (more == null){
-                    more = new More();
+                    more = new MoreFragment();
                 }
                 transaction.replace(R.id.content,more);
                 break;
         }
         transaction.commit();
     }
-    public void click(View v) {
-//        无提示打开蓝牙
-        BluetoothAdapter.getDefaultAdapter().enable();
-//有提示打开蓝牙
-//        Intent intent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-//        startActivity(intent);
-    }
-    public void click1(View v) {
-        BluetoothAdapter.getDefaultAdapter().disable();
-    }
-
 }

@@ -1,4 +1,4 @@
-package com.zdh.alphathink.imh;
+package com.zdh.alphathink.imh.fragment;
 
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.zdh.alphathink.imh.R;
 
 public class TitleFragment extends Fragment {
 

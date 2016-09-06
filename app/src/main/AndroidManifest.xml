@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.zdh.alphathink.imh">
-    <uses-permission android:name="android.permission.BLUETOOTH"/>
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -20,7 +23,8 @@
         </activity>
         <activity android:name=".WelcomeActivity" />
         <activity android:name=".Index" />
-        <activity android:name=".TitleFragment"></activity>
+        <activity android:name=".fragment.TitleFragment" />
+        <activity android:name=".WifiActivity"></activity>
     </application>
 
 </manifest>
