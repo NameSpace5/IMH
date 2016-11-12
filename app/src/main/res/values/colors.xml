@@ -7,4 +7,19 @@
     <color name="background">#EBEBEB</color>
     <color name="title">#393A3E</color>
     <color name="black_overlay">#66000000</color>
+    <color name="list_bg">#ffffffff</color>
+    <color name="red">#ffcd2903</color>
+    <color name="yellow">#ffff00</color>
+    <color name="light_cyan">#2196f3</color>
+    <color name="hight_cyan">#1665c1</color>
+    <color name="waring">#F3E8A8</color>
+    <color name="black">#3A3D46</color>
+    <color name="qing">#4475EC</color>
+    <color name="qing2">#10B0EA</color>
+    <color name="green">#43A276</color>
+    <color name="yellow1">#FECC17</color>
+    <color name="red1">#D33C31</color>
+    <color name="color_f2f2f2">#f2f2f2</color>
+    <color name="color_ff4631">#ff4631</color>
+    <color name="color_999999">#999999</color>
 </resources>

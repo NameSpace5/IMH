@@ -4,9 +4,14 @@ android {
     compileSdkVersion 23
     buildToolsVersion "23.0.3"
 
+    aaptOptions{
+        cruncherEnabled=false
+        useNewCruncher=false
+    }
+
     defaultConfig {
         applicationId "com.zdh.alphathink.imh"
-        minSdkVersion 14
+        minSdkVersion 15
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
@@ -20,8 +25,11 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.4.0'
-    compile 'com.android.support:support-v4:23.4.0'
+    compile files('libs/BmobSDK_V3.4.3_0820.jar')
+    compile files('libs/BmobIM_V1.1.9beta_20150820.jar')
+    compile files('libs/volley.jar')
 }
+

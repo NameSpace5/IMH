@@ -70,7 +70,7 @@ public class WelcomeActivity extends AppCompatActivity implements OnClickListene
         //设置数据
         mViewPager.setAdapter(mAdapter);
         //设置监听
-        mViewPager.addOnPageChangeListener(this);
+        mViewPager.setOnPageChangeListener(this);
         //初始化底部小点
         initPoint();
     }
