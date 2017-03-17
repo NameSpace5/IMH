@@ -16,6 +16,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.zdh.alphathink.imh.Bean.DBManager;
 import com.zdh.alphathink.imh.Bean.PersonDto;
 import com.zdh.alphathink.imh.Control.MyDialog;
 import com.zdh.alphathink.imh.CustomWidgets.CharacterParser;
@@ -25,8 +26,9 @@ import com.zdh.alphathink.imh.R;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
+
+import static com.zdh.alphathink.imh.R.id.dialog;
 
 
 public class Tablet extends Activity implements SideBar.OnTouchingLetterChangedListener, TextWatcher {
@@ -82,11 +84,11 @@ public class Tablet extends Activity implements SideBar.OnTouchingLetterChangedL
             public void onClick(DialogInterface dialog, int which) {
                 //药品添加到数据库，并改变notify
                 if (!bell_name.getText().toString().equals("")){
-                    HashMap<String,String> map = new HashMap<String, String>();
-                    map.put("name",bell_name.getText().toString());
-                    map.put("description",bell_desc.getText().toString());
-                    map.put("remark", bell_remark.getText().toString());
-                    dbManager.insert_BellInfo(map);
+                    PersonDto map = new PersonDto();
+                    map.setName(bell_name.getText().toString());
+                    map.setDescription(bell_desc.getText().toString());
+                    map.setRemark(bell_remark.getText().toString());
+                    dbManager.insert(map);
                     Toast.makeText(Tablet.this,"已存入数据库！",Toast.LENGTH_SHORT).show();
                     dialog.dismiss();
                     initData();
@@ -113,7 +115,7 @@ public class Tablet extends Activity implements SideBar.OnTouchingLetterChangedL
         characterParser = CharacterParser.getInstance();
         pinyinComparator = new PinyinComparator();
         dbManager = new DBManager(this);
-        sortDataList = dbManager.queryBellInfo();
+        sortDataList = dbManager.query();
         fillData(sortDataList);
 // 根据a-z进行排序源数据
         Collections.sort(sortDataList, pinyinComparator);

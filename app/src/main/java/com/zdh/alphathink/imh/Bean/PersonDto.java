@@ -6,6 +6,34 @@ package com.zdh.alphathink.imh.Bean;
 
 public class PersonDto {
     private Integer userId;// 用户ID
+    private int _id;
+    private String description;
+    private String remark;
+
+    public int get_id() {
+        return _id;
+    }
+
+    public void set_id(int _id) {
+        this._id = _id;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
+
     private String name;// 姓名
     private String head;// 头像
     private String utype;// 用户类型

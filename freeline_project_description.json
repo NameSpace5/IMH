@@ -1,0 +1,179 @@
+{
+    "android_gradle_plugin_version": "2.2.3",
+    "apk_path": "D:\\Android\\IMH\\app\\build\\outputs\\apk\\app-debug.apk",
+    "apt": {
+        
+    },
+    "apt_libraries": {
+        "dagger": false,
+        "butterknife": false
+    },
+    "auto_dependency": true,
+    "build_cache_dir": "D:\\Android\\IMH\\app\\build\\freeline",
+    "build_directory": "D:\\Android\\IMH\\app\\build",
+    "build_script": "gradlew.bat :app:assembleDebug",
+    "build_script_work_directory": "",
+    "build_tools_directory": "C:\\Users\\Panda\\AppData\\Local\\Android\\sdk\\build-tools\\23.0.3",
+    "build_tools_version": "23.0.3",
+    "check_sources_md5": [
+        
+    ],
+    "compile_sdk_directory": "C:\\Users\\Panda\\AppData\\Local\\Android\\sdk\\platforms\\android-23",
+    "compile_sdk_version": "android-23",
+    "databinding": [
+        
+    ],
+    "databinding_compiler_jar": "",
+    "databinding_modules": [
+        
+    ],
+    "debug_package": "com.zdh.alphathink.imh",
+    "exclude_dep_res_paths": [
+        
+    ],
+    "extra_dep_res_paths": [
+        
+    ],
+    "freeline_cache_dir": "D:\\Android\\IMH",
+    "freeline_gradle_plugin_version": "0.8.6",
+    "ignore_resource_ids": [
+        "avd_hide_password_1",
+        "avd_hide_password_2",
+        "avd_hide_password_3",
+        "avd_show_password_1",
+        "avd_show_password_2",
+        "avd_show_password_3"
+    ],
+    "java_home": "C:\\Program Files\\Java\\jdk1.8.0_112",
+    "launcher": "com.zdh.alphathink.imh.MainActivity",
+    "main_assets_directory": [
+        "D:\\Android\\IMH\\app\\src\\debug\\assets",
+        "D:\\Android\\IMH\\app\\src\\main\\assets"
+    ],
+    "main_jniLibs_directory": [
+        "D:\\Android\\IMH\\app\\src\\debug\\jniLibs",
+        "D:\\Android\\IMH\\app\\src\\main\\jniLibs"
+    ],
+    "main_jni_directory": [
+        "D:\\Android\\IMH\\app\\src\\debug\\jni",
+        "D:\\Android\\IMH\\app\\src\\main\\jni"
+    ],
+    "main_manifest_path": "D:\\Android\\IMH\\app\\src\\main\\AndroidManifest.xml",
+    "main_project_dir": "app",
+    "main_project_name": "app",
+    "main_r_path": "D:\\Android\\IMH\\app\\build\\generated\\source\\r\\debug\\R.java",
+    "main_res_directory": [
+        "D:\\Android\\IMH\\app\\src\\debug\\res",
+        "D:\\Android\\IMH\\app\\src\\main\\res"
+    ],
+    "main_src_directory": [
+        "D:\\Android\\IMH\\app\\src\\debug\\java",
+        "D:\\Android\\IMH\\app\\src\\main\\java"
+    ],
+    "module_dependencies": {
+        "IMKit": [
+            "IMLib"
+        ],
+        "IMLib": [
+            
+        ],
+        "app": [
+            "IMKit",
+            "IMLib"
+        ]
+    },
+    "modules": [
+        {
+            "name": "app",
+            "path": "D:\\Android\\IMH\\app"
+        },
+        {
+            "name": "IMKit",
+            "path": "D:\\Android\\IMH\\IMKit"
+        },
+        {
+            "name": "IMLib",
+            "path": "D:\\Android\\IMH\\IMLib"
+        }
+    ],
+    "package": "com.zdh.alphathink.imh",
+    "product_flavor": "",
+    "project_source_sets": {
+        "IMKit": {
+            "main_assets_directory": [
+                "D:\\Android\\IMH\\IMKit\\src\\release\\assets",
+                "D:\\Android\\IMH\\IMKit\\src\\main\\assets"
+            ],
+            "main_jniLibs_directory": [
+                "D:\\Android\\IMH\\IMKit\\src\\release\\jniLibs",
+                "D:\\Android\\IMH\\IMKit\\src\\main\\libs"
+            ],
+            "main_jni_directory": [
+                "D:\\Android\\IMH\\IMKit\\src\\release\\jni"
+            ],
+            "main_manifest_path": "D:\\Android\\IMH\\IMKit\\src\\main\\AndroidManifest.xml",
+            "main_res_directory": [
+                "D:\\Android\\IMH\\IMKit\\src\\release\\res",
+                "D:\\Android\\IMH\\IMKit\\src\\main\\res"
+            ],
+            "main_src_directory": [
+                "D:\\Android\\IMH\\IMKit\\src\\release\\java",
+                "D:\\Android\\IMH\\IMKit\\src\\main\\java"
+            ]
+        },
+        "IMLib": {
+            "main_assets_directory": [
+                "D:\\Android\\IMH\\IMLib\\src\\release\\assets",
+                "D:\\Android\\IMH\\IMLib\\src\\main\\assets"
+            ],
+            "main_jniLibs_directory": [
+                "D:\\Android\\IMH\\IMLib\\src\\release\\jniLibs",
+                "D:\\Android\\IMH\\IMLib\\libs"
+            ],
+            "main_jni_directory": [
+                "D:\\Android\\IMH\\IMLib\\src\\release\\jni",
+                "D:\\Android\\IMH\\IMLib\\src\\main\\jni"
+            ],
+            "main_manifest_path": "D:\\Android\\IMH\\IMLib\\AndroidManifest.xml",
+            "main_res_directory": [
+                "D:\\Android\\IMH\\IMLib\\src\\release\\res",
+                "D:\\Android\\IMH\\IMLib\\res"
+            ],
+            "main_src_directory": [
+                "D:\\Android\\IMH\\IMLib\\src\\release\\java",
+                "D:\\Android\\IMH\\IMLib\\src\\main\\java"
+            ]
+        },
+        "app": {
+            "main_assets_directory": [
+                "D:\\Android\\IMH\\app\\src\\debug\\assets",
+                "D:\\Android\\IMH\\app\\src\\main\\assets"
+            ],
+            "main_jniLibs_directory": [
+                "D:\\Android\\IMH\\app\\src\\debug\\jniLibs",
+                "D:\\Android\\IMH\\app\\src\\main\\jniLibs"
+            ],
+            "main_jni_directory": [
+                "D:\\Android\\IMH\\app\\src\\debug\\jni",
+                "D:\\Android\\IMH\\app\\src\\main\\jni"
+            ],
+            "main_manifest_path": "D:\\Android\\IMH\\app\\src\\main\\AndroidManifest.xml",
+            "main_res_directory": [
+                "D:\\Android\\IMH\\app\\src\\debug\\res",
+                "D:\\Android\\IMH\\app\\src\\main\\res"
+            ],
+            "main_src_directory": [
+                "D:\\Android\\IMH\\app\\src\\debug\\java",
+                "D:\\Android\\IMH\\app\\src\\main\\java"
+            ]
+        }
+    },
+    "project_type": "gradle",
+    "retrolambda": {
+        
+    },
+    "root_dir": "D:\\Android\\IMH",
+    "sdk_directory": "C:\\Users\\Panda\\AppData\\Local\\Android\\sdk",
+    "use_jdk8": true,
+    "use_system_gradle": false
+}

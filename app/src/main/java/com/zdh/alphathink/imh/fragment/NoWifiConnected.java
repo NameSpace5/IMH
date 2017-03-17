@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
-import com.zdh.alphathink.imh.Control.Bell.Bell;
 import com.zdh.alphathink.imh.Control.Box.Box;
 import com.zdh.alphathink.imh.Control.Tablet.Tablet;
 import com.zdh.alphathink.imh.Control.Clock.Clock;
@@ -59,9 +58,6 @@ public class NoWifiConnected extends Fragment implements View.OnClickListener{
                 break;
             case R.id.control_clock:
                 intent.setClass(getActivity(), Clock.class);
-                break;
-            case R.id.control_bell:
-                intent.setClass(getActivity(),Bell.class);
                 break;
         }
         startActivity(intent);

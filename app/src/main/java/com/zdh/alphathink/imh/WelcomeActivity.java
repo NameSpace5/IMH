@@ -12,8 +12,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import java.util.ArrayList;
 
-import static com.xiaomi.push.thrift.a.R;
-
 public class WelcomeActivity extends AppCompatActivity implements OnClickListener,OnPageChangeListener {
     private ViewPager mViewPager;
     private MyAdapter mAdapter;

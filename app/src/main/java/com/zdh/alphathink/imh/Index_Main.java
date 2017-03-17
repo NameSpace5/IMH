@@ -1,7 +1,6 @@
 package com.zdh.alphathink.imh;
 
 
-import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -13,7 +12,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.zdh.alphathink.imh.fragment.Doctor_consult;
 import com.zdh.alphathink.imh.fragment.Healthy_News;
-import com.zdh.alphathink.imh.fragment.Medical_control;
 import com.zdh.alphathink.imh.fragment.NoWifiConnected;
 import com.zdh.alphathink.imh.fragment.Personal;
 
@@ -30,7 +28,6 @@ public class  Index_Main extends FragmentActivity implements View.OnClickListene
     private LinearLayout personal;
 
     private Healthy_News fragment_healthy_news;
-    private Medical_control fragment_medical_control;
     private Doctor_consult fragment_doctor_consult;
     private Personal fragment_personal;
     private NoWifiConnected noWifiConnected;
