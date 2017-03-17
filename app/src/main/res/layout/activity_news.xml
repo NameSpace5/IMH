@@ -1,46 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".News.NewsActivity">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
-        android:id="@+id/linearLayout11">
-        <ImageButton
-            android:onClick="back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:src="@drawable/btn_back"
-            android:background="@null"/>
+        android:id="@+id/linearLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="40.0dip"
+        android:background="#FFFFFF" >
+
         <TextView
-            android:paddingTop="3dp"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:textColor="@color/white"
-            android:text="医药咨询"
-            android:textSize="35sp"
+            android:id="@+id/text1"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0"
             android:gravity="center"
-            android:paddingRight="30dp"/>
+            android:text="最新"
+            android:textColor="#000000"
+            android:textSize="20.0dip" />
+
+        <TextView
+            android:id="@+id/text2"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0"
+            android:gravity="center"
+            android:text="最热"
+            android:textColor="#000000"
+            android:textSize="20.0dip" />
+
+        <TextView
+            android:id="@+id/text3"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0"
+            android:gravity="center"
+            android:text="重要"
+            android:textColor="#000000"
+            android:textSize="20.0dip" />
     </LinearLayout>
 
-    <ListView
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:layout_below="@id/linearLayout11"
-        android:layout_width="wrap_content"
+    <ImageView
+        android:id="@+id/cursor"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/listView"
-        android:cacheColorHint="#00000000"
-        android:dividerHeight="2dp"
-        android:fastScrollEnabled="true"
-        android:divider="@color/list_bg"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="11dp" />
+        android:scaleType="matrix"
+        android:src="@color/black" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vPager"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_weight="1.0"
+        android:flipInterval="30"
+        android:persistentDrawingCache="animation" />
 
 
-</RelativeLayout>
+
+</LinearLayout>

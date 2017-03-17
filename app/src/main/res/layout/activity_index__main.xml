@@ -1,34 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_index__fragment"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.zdh.alphathink.imh.fragment.Index_Fragment">
-    <RelativeLayout
+    android:layout_height="match_parent">
+    
+    <fragment
+        android:id="@+id/fragment_index_title"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:name="com.zdh.alphathink.imh.fragment.Index_Fragment"/>
+
+    <FrameLayout
+        android:layout_below="@+id/fragment_index_title"
         android:background="@color/index_content_color"
         android:id="@+id/index_content"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_bar"/>
+
+
+
     <LinearLayout
+        android:id="@+id/bottom_bar"
+        android:baselineAligned="false"
         android:background="@color/index_background_color"
         android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
         android:layout_height="73dp">
         <LinearLayout
+            android:id="@+id/index_healthy_news"
             android:layout_weight="1"
-            android:paddingTop="12dp"
+            android:paddingTop="10dp"
             android:gravity="center"
             android:orientation="vertical"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
             <ImageButton
+                android:id="@+id/img_healthy"
+                android:clickable="false"
                 android:contentDescription="@string/bottom_bar_news"
                 android:background="@null"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/index_healthy_news_normal"/>
             <TextView
+                android:id="@+id/text_healthy"
                 android:textColor="@color/index_text_normal"
                 android:textSize="14sp"
                 android:paddingTop="5dp"
@@ -37,19 +53,23 @@
                 android:text="@string/bottom_bar_news"/>
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/index_medical_control"
             android:gravity="center"
-            android:paddingTop="12dp"
+            android:paddingTop="10dp"
             android:layout_weight="1"
             android:orientation="vertical"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
         <ImageButton
+            android:id="@+id/img_medical"
+            android:clickable="false"
             android:contentDescription="@string/bottom_bar_control"
             android:background="@null"
             android:src="@drawable/index_medical_box_normal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
             <TextView
+                android:id="@+id/text_medical"
                 android:textColor="@color/index_text_normal"
                 android:textSize="14sp"
                 android:paddingTop="8dp"
@@ -58,19 +78,23 @@
                 android:text="@string/bottom_bar_control"/>
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/index_doctor_consult"
             android:gravity="center"
-            android:paddingTop="12dp"
+            android:paddingTop="10dp"
             android:layout_weight="1"
             android:orientation="vertical"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
         <ImageButton
+            android:id="@+id/img_doctor"
+            android:clickable="false"
             android:contentDescription="@string/bottom_bar_chatting"
             android:background="@null"
             android:src="@drawable/index_doctor_consult_normal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
             <TextView
+                android:id="@+id/text_doctor"
                 android:textColor="@color/index_text_normal"
                 android:textSize="14sp"
                 android:paddingTop="8dp"
@@ -79,19 +103,23 @@
                 android:text="@string/bottom_bar_chatting"/>
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/index_personal"
             android:gravity="center"
-            android:paddingTop="12dp"
+            android:paddingTop="10dp"
             android:layout_weight="1"
             android:orientation="vertical"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
         <ImageButton
+            android:id="@+id/img_personal"
+            android:clickable="false"
             android:contentDescription="@string/bottom_bar_personal"
             android:background="@null"
             android:src="@drawable/index_personal_normal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
             <TextView
+                android:id="@+id/text_personal"
                 android:textColor="@color/index_text_normal"
                 android:textSize="14sp"
                 android:paddingTop="8dp"

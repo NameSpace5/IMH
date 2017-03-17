@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import com.zdh.alphathink.imh.R;
 
+
 public class MyDialog extends Dialog{
 
     public MyDialog(Context context) {

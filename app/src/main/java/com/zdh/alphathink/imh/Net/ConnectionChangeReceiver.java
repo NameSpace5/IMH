@@ -6,12 +6,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.net.NetworkInfo.State;
 import android.widget.LinearLayout;
 import android.widget.Toast;
-
-import com.zdh.alphathink.imh.Control.ControlActivity;
-import com.zdh.alphathink.imh.R;
 
 /**
  * Created by Panda on 2016/9/9.

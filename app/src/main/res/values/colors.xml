@@ -3,17 +3,15 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="white">#ffffff</color>
     <color name="background">#EBEBEB</color>
     <color name="title">#393A3E</color>
-    <color name="black_overlay">#66000000</color>
     <color name="list_bg">#ffffffff</color>
     <color name="red">#ffcd2903</color>
     <color name="yellow">#ffff00</color>
     <color name="light_cyan">#2196f3</color>
     <color name="hight_cyan">#1665c1</color>
     <color name="waring">#F3E8A8</color>
-    <color name="black">#3A3D46</color>
+    <color name="black1">#3A3D46</color>
     <color name="qing">#4475EC</color>
     <color name="qing2">#10B0EA</color>
     <color name="green">#43A276</color>
@@ -21,5 +19,16 @@
     <color name="red1">#D33C31</color>
     <color name="color_f2f2f2">#f2f2f2</color>
     <color name="color_ff4631">#ff4631</color>
-    <color name="color_999999">#999999</color>
+    <color name="color_999999">#15000000</color>
+    <color name="index_background_color">#FAFAFA</color>
+    <color name="index_content_color">#EDEDED</color>
+    <color name="index_text_normal">#666666</color>
+    <color name="index_text_checked">#108CFB</color>
+    <color name="yellow_page_search_bg">#fffffbfa</color>
+    <color name="black">#ff000000</color>
+    <color name="login_form_hint">#ffb5b5b5</color>
+    <color name="transparent">#00000000</color>
+    <color name="yellow_light">#ffefa717</color>
+    <color name="white">#ffffffff</color>
+    <color name="selector">#cccccc</color>
 </resources>

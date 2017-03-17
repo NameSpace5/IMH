@@ -1,109 +1,186 @@
 package com.zdh.alphathink.imh.News;
 
-import android.content.Context;
-import android.net.Uri;
+import android.app.ProgressDialog;
+import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.Toast;
 
+import com.show.api.ShowApiRequest;
+import com.zdh.alphathink.imh.Bean.ACache;
+import com.zdh.alphathink.imh.News.Bean.Custom_ListView;
+import com.zdh.alphathink.imh.News.Bean.NewsBean;
+import com.zdh.alphathink.imh.News.Bean.News_First_Adapter;
 import com.zdh.alphathink.imh.R;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+import java.util.ArrayList;
+import java.util.List;
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link Fragment_news_first.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link Fragment_news_first#newInstance} factory method to
- * create an instance of this fragment.
- */
+import static android.R.attr.value;
+
+
 public class Fragment_news_first extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    private OnFragmentInteractionListener mListener;
-
-    public Fragment_news_first() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Fragment_news_first.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static Fragment_news_first newInstance(String param1, String param2) {
-        Fragment_news_first fragment = new Fragment_news_first();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+    private View view;
+    private ACache aCache;
+    private News_First_Adapter adapter;
+    private Custom_ListView listView;
+    private List<NewsBean> list = new ArrayList<NewsBean>();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_fragment_news_first, container, false);
+        view = inflater.inflate(R.layout.fragment_fragment_news_first, container, false);
+        listView = (Custom_ListView) view.findViewById(R.id.listview_news_first);
+        aCache = ACache.get(getActivity());
+        adapter = new News_First_Adapter(getActivity(),list);
+        initAllData();
+        return view;
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
-    }
+    public void initAllData() {
+        final JSONObject jsonObject = aCache.getAsJSONObject("NewsDatas");
+        if (null == jsonObject) {
+            new AsyncTask<Void, Void, Void>() {
+                ProgressDialog progressDialog = null;
+                @Override
+                protected Void doInBackground(Void... params) {
+                    refreshData();
+                    return null;
+                }
 
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
+                @Override
+                protected void onPreExecute() {
+                    progressDialog = new ProgressDialog(getActivity());
+                    progressDialog.setTitle("请稍候...");
+                    progressDialog.setMessage("正在更新数据...");
+                    progressDialog.show();
+                }
+
+                @Override
+                protected void onProgressUpdate(Void... values) {
+                    super.onProgressUpdate(values);
+                }
+
+                @Override
+                protected void onPostExecute(Void aVoid) {
+                    progressDialog.dismiss();
+                    initAllData();
+                }
+            }.execute(null, null, null);
+
+
         } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
+            try {
+                initListData();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            listView.setAdapter(adapter);
+//        Toast.makeText(getActivity(),""+list,Toast.LENGTH_LONG).show();
+
+            /**
+             * 这里是调用下拉刷新的代码，500ms延迟动画展示
+             */
+            listView.setonRefreshListener(new Custom_ListView.OnRefreshListener() {
+                @Override
+                public void onRefresh() {
+                    new AsyncTask<Void, Void, Void>() {
+                        protected Void doInBackground(Void... params) {
+                            try {
+                                refreshData();//数据在此处已刷新
+                                Thread.sleep(500);
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                            return null;
+                        }
+
+                        @Override
+                        protected void onPostExecute(Void result) {
+                            try {
+                                list.clear();
+                                initListData();
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                            adapter.notifyDataSetChanged();//通知界面更新，但是没有用。。。
+                            listView.onRefreshComplete();
+                        }
+                    }.execute(null, null, null);
+                }
+            });
+
+            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                String url = null;
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    Intent intent = new Intent(getActivity(),HealthNewsDetail.class);
+                    try {
+                        url = jsonObject.getJSONObject("showapi_res_body").getJSONObject("pagebean")
+                                .getJSONArray("contentlist").getJSONObject(position-1).getString("link");
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                    intent.putExtra("url",url);
+                    startActivity(intent);
+                }
+            });
         }
     }
 
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mListener = null;
+    public List<NewsBean> initListData() throws JSONException {
+        JSONObject jsonObject = aCache.getAsJSONObject("NewsDatas");
+        JSONArray array  = jsonObject.getJSONObject("showapi_res_body")
+                .getJSONObject("pagebean").getJSONArray("contentlist");
+
+        for (int i = 0;i<array.length();i++){
+           JSONObject js = (JSONObject) array.get(i);
+            NewsBean newsBean = new NewsBean();
+            newsBean.setAllList(js.getJSONArray("allList"));
+            newsBean.setPubDate(js.getString("pubDate"));
+            newsBean.setHavePic(js.getBoolean("havePic"));
+            newsBean.setTitle(js.getString("title"));
+            newsBean.setChannelName(js.getString("channelName"));
+            newsBean.setImgUrls(js.getJSONArray("imageurls"));
+            newsBean.setDesc(js.getString("desc"));
+            newsBean.setSource(js.getString("source"));
+            newsBean.setLink(js.getString("link"));
+            list.add(newsBean);
+        }
+        return  list;
+
     }
 
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
+    public void refreshData(){
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                String appid = "29112";
+                String secret = "a0ced64006414ff782abcdc8acfe346d";
+                final String res = new ShowApiRequest("http://route.showapi.com/109-35", appid, secret)
+                        .addTextPara("channelId", "")
+                        .addTextPara("channelName", "")
+                        .addTextPara("title", "")
+                        .addTextPara("page", "")
+                        .addTextPara("needContent", "")
+                        .addTextPara("needHtml", "")
+                        .addTextPara("needAllList", "")
+                        .addTextPara("maxResult", "")
+                        .post();
+
+                System.out.print(res);
+                aCache.put("NewsDatas",res);
+            }
+
+        }).start();
     }
 }

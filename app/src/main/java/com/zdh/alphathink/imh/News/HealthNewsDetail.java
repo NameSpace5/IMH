@@ -10,6 +10,8 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+import com.zdh.alphathink.imh.R;
+
 
 public class HealthNewsDetail extends Activity
 {
@@ -52,11 +54,11 @@ public class HealthNewsDetail extends Activity
     //覆盖Activity类的onKeyDown(int keyCoder,KeyEvent event)方法  
     public boolean onKeyDown(int keyCode, KeyEvent event) {  
         if ((keyCode == KeyEvent.KEYCODE_BACK) && webview.canGoBack()) {  
-            webview.goBack(); //goBack()表示返回WebView的上一页面  
-            return true;  
-        }  
+            webview.goBack(); //goBack()表示返回WebView的上一页面
+
+        }
         finish();//结束退出程序
-        return false;  
+        return false;
     }  
       
     //Web视图  

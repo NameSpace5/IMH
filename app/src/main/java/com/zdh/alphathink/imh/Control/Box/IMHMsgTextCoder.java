@@ -22,13 +22,14 @@ public class IMHMsgTextCoder implements IMHMsgCode {
     public static final String TIME = "t";
     public static final String CHARSETNAME = "GBK";
     public static final String DELIMSTR = " ";
+    public static final String symbol = "@";
 
     public byte[] toWire(IMHMsg msg) throws IOException {
         String msgString = MAGIC + DELIMSTR +(msg.isInquiry() ? INQSTR : SETSTR)+DELIMSTR
                 +DELIMSTR+ID+DELIMSTR+Integer.toString(msg.getId())
                 +DELIMSTR+NAME+DELIMSTR+msg.getName()
                 +DELIMSTR+COLOR+DELIMSTR+Integer.toString(msg.getColor())
-                +DELIMSTR+TIME+DELIMSTR+msg.getTime();
+                +DELIMSTR+TIME+DELIMSTR+msg.getTime()+symbol;
 //                 (msg.isInquiry() ? INQSTR : VOTESTR)
 //                + DELIMSTR + (msg.isResponse() ? RESPONSESTR + DELIMSTR : "")
 //                + Integer.toString(msg.getCandidateID()) + DELIMSTR

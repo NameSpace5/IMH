@@ -1,13 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_personal_thought"
     android:layout_width="match_parent"
+    android:orientation="vertical"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/background"
     tools:context="com.zdh.alphathink.imh.Personal.Personal_thought">
 
-</RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/index_background_color"
+        android:id="@+id/linearLayout">
+        <FrameLayout
+            android:id="@+id/imgBtn_back_thought"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentTop="true">
+        <ImageButton
+            android:clickable="false"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="22dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/btn_just_back"
+            android:background="@null"/>
+        </FrameLayout>
+        <TextView
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/index_text_normal"
+            android:text="意见反馈"
+            android:textSize="21sp"
+            android:gravity="center"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+        <EditText
+            android:id="@+id/editText_personal_thought"
+            android:inputType="text|textMultiLine"
+            android:paddingTop="5dp"
+            android:gravity="top"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:maxEms="360"
+            android:background="@null"
+            android:hint="请输入您遇到的问题或对我们的建议..."/>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:paddingTop="2dp"
+        android:paddingRight="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="20dp">
+        <TextView
+            android:id="@+id/textView_personal_thought"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="您还可以输入200字"/>
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white">
+        <TextView
+            android:paddingLeft="15dp"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="评分："/>
+        <RatingBar
+            android:id="@+id/ratingBar_personal_thought"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:max="5"
+            android:rating="1"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            android:paddingLeft="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="手机号："/>
+        <EditText
+            android:id="@+id/editText_personal_phoneNumber"
+            android:background="@null"
+            android:textSize="15sp"
+            android:maxLength="11"
+            android:inputType="number"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="(可选)方便我们联系您。"/>
+    </LinearLayout>
+    <Button
+        android:id="@+id/button_personal_submit"
+        android:background="@drawable/corners_bg"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="提交"/>
+
+</LinearLayout>

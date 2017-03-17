@@ -1,4 +1,4 @@
-package com.zdh.alphathink.imh.Control.Tablet.Clock;
+package com.zdh.alphathink.imh.Control.Clock;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

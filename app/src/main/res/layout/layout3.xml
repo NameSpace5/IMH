@@ -10,7 +10,7 @@
         android:layout_height="fill_parent"
         android:layout_weight="1.0"
         android:gravity="center"
-        android:text="页卡3"
+        android:text="重要信息，一条不漏"
         android:textColor="#000000"
         android:textSize="22.0dip" />
 

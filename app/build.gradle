@@ -1,35 +1,71 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.antfortune.freeline'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "23.0.3"
+    buildToolsVersion '25.0.0'
 
-    aaptOptions{
-        cruncherEnabled=false
-        useNewCruncher=false
+    useLibrary 'org.apache.http.legacy'
+    aaptOptions {
+        cruncherEnabled = false
+        useNewCruncher = false
     }
+
 
     defaultConfig {
         applicationId "com.zdh.alphathink.imh"
         minSdkVersion 15
         targetSdkVersion 23
         versionCode 1
+        multiDexEnabled true
         versionName "1.0"
+        ndk {
+            abiFilters "armeabi-v7a", "x86"
+        }
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+
+    dexOptions {
+        preDexLibraries true
+        javaMaxHeapSize "3g"
+        dexInProcess = true
     }
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.4.0'
-    compile files('libs/BmobSDK_V3.4.3_0820.jar')
-    compile files('libs/BmobIM_V1.1.9beta_20150820.jar')
     compile files('libs/volley.jar')
+    compile files('libs/pinyin4j-2.5.0.jar')
+    compile files('libs/showapi_sdk.jar')
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile files('libs/AMap_2DMap_V2.9.0_20160525.jar')
+    compile files('libs/AMap_Channel_Location_V1.4.0_20160708.jar')
+    compile files('libs/AMap_Search_V3.4.0_20160811.jar')
+    compile files('libs/universal-image-loader-1.9.5.jar')
+    compile 'com.android.support:appcompat-v7:23.4.0'
+    compile 'com.android.support:support-v4:23.4.0'
+    compile 'com.google.android.gms:play-services:9.8.0'
+    compile 'junit:junit:4.12'
+    compile 'com.android.support:multidex:1.0.1'
+    compile 'cn.bmob.android:bmob-sdk:3.5.0'
+    compile 'com.android.support.constraint:constraint-layout:1.0.0-beta4'
+    testCompile 'junit:junit:4.12'
+    compile project(':IMKit')
+    compile project(':IMLib')
 }
+
+
+
+
+
+
+
+
+
+
+
 

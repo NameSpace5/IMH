@@ -12,6 +12,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import java.util.ArrayList;
 
+import static com.xiaomi.push.thrift.a.R;
+
 public class WelcomeActivity extends AppCompatActivity implements OnClickListener,OnPageChangeListener {
     private ViewPager mViewPager;
     private MyAdapter mAdapter;
@@ -36,7 +38,7 @@ public class WelcomeActivity extends AppCompatActivity implements OnClickListene
         button.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent go=new Intent(WelcomeActivity.this,Index.class);
+                Intent go=new Intent(WelcomeActivity.this,Index_Main.class);
                 startActivity(go);
                 WelcomeActivity.this.finish();
             }

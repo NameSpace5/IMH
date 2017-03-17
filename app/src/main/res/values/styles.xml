@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
     <style name="AppTheme1" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -22,9 +22,9 @@
         <item name="android:background">@color/white</item>
     </style>
 
-    <style name="AppBaseTheme" parent="android:Theme.Light"></style>
+    <style name="AppBaseTheme" parent="android:Theme.Light"/>
 
-    <style name="AppTheme" parent="AppBaseTheme"></style>
+    <style name="AppTheme" parent="AppBaseTheme"/>
 
     <style name="text_18_ffffff">
         <item name="android:textSize">18.0dip</item>

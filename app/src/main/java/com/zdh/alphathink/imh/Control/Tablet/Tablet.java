@@ -16,25 +16,17 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.zdh.alphathink.imh.Bean.Bell_info;
 import com.zdh.alphathink.imh.Bean.PersonDto;
 import com.zdh.alphathink.imh.Control.MyDialog;
-import com.zdh.alphathink.imh.Control.PinyinComparator;
-import com.zdh.alphathink.imh.Control.SchoolFriendMemberListAdapter;
 import com.zdh.alphathink.imh.CustomWidgets.CharacterParser;
 import com.zdh.alphathink.imh.CustomWidgets.SideBar;
 import com.zdh.alphathink.imh.R;
-import com.zdh.alphathink.imh.fragment.DBManager;
+
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-
-import static android.R.attr.data;
-import static com.zdh.alphathink.imh.R.id.dialog;
-import static com.zdh.alphathink.imh.R.id.listview1;
 
 
 public class Tablet extends Activity implements SideBar.OnTouchingLetterChangedListener, TextWatcher {
@@ -75,12 +67,6 @@ public class Tablet extends Activity implements SideBar.OnTouchingLetterChangedL
         mSideBar.setOnTouchingLetterChangedListener(this);
         initData();
     }
-
-
-    public void mtoast(View v){
-        Toast.makeText(this, ""+dbManager.queryBellInfo(), Toast.LENGTH_SHORT).show();
-    }
-
 
     public void add(){
         MyDialog.Builder builder = new MyDialog.Builder(Tablet.this);
