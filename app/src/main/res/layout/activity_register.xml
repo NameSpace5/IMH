@@ -1,77 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_register"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.zdh.alphathink.imh.User.register">
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="phone"
-        android:ems="10"
-        android:hint="请输入11位手机号码！"
-        android:id="@+id/m_phone"
-        android:layout_above="@+id/password"
-        android:layout_centerHorizontal="true" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="phone"
-        android:hint="请输入密码！"
-        android:ems="10"
-        android:id="@+id/password"
-        android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/smscode"
-        android:layout_alignStart="@+id/smscode" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="numberPassword"
-        android:ems="10"
-        android:hint="请输入验证码！"
-        android:textColorHint="@color/colorPrimary"
-        android:id="@+id/smscode"
-        android:layout_below="@+id/password"
-        android:layout_centerHorizontal="true" />
-
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btn_register"
-        android:layout_below="@+id/smscode"
-        android:layout_alignLeft="@+id/smscode"
-        android:layout_alignStart="@+id/smscode"
-        android:text="获取验证码"
-        android:layout_toLeftOf="@+id/submit"
-        android:layout_toStartOf="@+id/submit" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="注册"
-        android:onClick="submit"
-        android:id="@+id/submit"
-        android:layout_below="@+id/smscode"
-        android:layout_alignRight="@+id/smscode"
-        android:layout_alignEnd="@+id/smscode" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="已经注册，点击登录！"
-        android:id="@+id/login"
-        android:onClick="login"
-        android:layout_below="@+id/btn_register"
-        android:layout_alignRight="@+id/submit"
-        android:layout_alignEnd="@+id/submit"
-        android:layout_alignLeft="@+id/btn_register"
-        android:layout_alignStart="@+id/btn_register" />
+    tools:context="com.zdh.alphathink.imh.Personal.UserDao.RegisterActivity">
 
 </RelativeLayout>

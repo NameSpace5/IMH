@@ -1,16 +1,9 @@
 package com.zdh.alphathink.imh;
-
-import android.bluetooth.BluetoothAdapter;
-import android.bluetooth.BluetoothDevice;
-import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-
-
 
 public class MainActivity extends AppCompatActivity {
     private SharedPreferences preferences;
@@ -31,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         }else{
-            Intent intent = new Intent(MainActivity.this,Index.class);
+            Intent intent = new Intent(MainActivity.this,Index_Main.class);
             startActivity(intent);
             finish();
         }
